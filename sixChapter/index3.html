@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        background-color: #212121;
+        color: #fff;
+        margin-top: 5rem;
+    }
+    .center{
+        display: flex;
+        height: 90vh;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #clock{
+        font-size: 40px;
+        background-color: orange;
+        padding: 20px 40px;
+        border-radius: 10px;
+    }
+    .home,.youtube{
+            background-color: #fff;
+            padding: 10px 30px;
+            border-radius: 8px;
+            color: #212121;
+            text-decoration: none;
+            border: 2px solid #212121;
+            margin-top: 10rem;
+  }
+  #banner{
+    font-size: 3rem;
+    margin-bottom: 5rem;
+  }
+</style>
+<body>
+    <nav>
+        <a href="home.html" aria-current="page" class="home">Home</a>
+        <a href="https://www.youtube.com/@chaiaurcode" class="youtube" >youtube</a>
+    </nav>
+    <div class="center">
+        <div id="banner"><span>Your Local Time </span></div>
+        <div id="clock"></div>
+    </div>
+    <script>
+       
+       const clock = document.getElementById('clock') 
+
+       setInterval(function(){
+
+        let date = new Date()
+    //    console.log(date.toLocaleTimeString());
+    clock.innerHTML = date.toLocaleTimeString();
+
+       },1000)
+    </script>
+</body>
+</html>

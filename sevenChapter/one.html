@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<style>
+    li {
+        flex-direction: column;
+        margin: 2rem;
+        display: flex;
+        list-style: none;
+    }
+</style>
+
+<body style="background-color: #414141;color: aliceblue;">
+    <h2>Amessing Images</h2>
+    <div id="images">
+        <ul>
+            <li><img width="200px" id="photoshop"
+                    src="https://th.bing.com/th/id/OIP.E4IJcali_762Oo_vNhhbFgHaEK?w=301&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?w=271&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="photo2"></li>
+            <li><img width="200px" id="river"
+                    src="https://th.bing.com/th/id/OIP.P8fJWbgoZs1jfbe7aaTLHQHaEK?w=301&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="photo3"></li>
+            <li><img width="200px" id="owl"
+                    src="https://th.bing.com/th/id/OIP.cKTq4enAGO_Wg_Omp0ysngHaEK?w=301&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="photo4"></li>
+            <li><img width="200px" id="prayer"
+                    src="https://th.bing.com/th/id/OIP.o01pM7cb-KEA7GT-cC7nEgHaE8?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="photo5"></li>
+            <li><img width="200px" id="last"
+                    src="https://th.bing.com/th/id/OIP.rjExmgmKTbfTBdhiO6pcZAHaE8?w=256&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="photo6"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked')
+    // }
+    //  type, timeStamp, preventDefault, target, toElement, srcElement, currentTarget, clientX, clientY, screenX, screenY, altKey, ctrlKey, shiftKey, leyCode
+
+    //attacgEvent() old methood
+    //jQuery -on also old
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('click inside the ul');
+
+    // },false)//false for default   
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('owl click');
+    //     e.stopPropagation()
+    // },false)//false for default   
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     .stopPropagation()
+    //     console.log('google clicked');
+
+    // },false)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.parentNode);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+    }, false)
+    // removeIt.parentNode.removeChild(removeIt)
+</script>
+
+</html>
